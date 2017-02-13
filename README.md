@@ -1,0 +1,1 @@
+# jcore-react-native
