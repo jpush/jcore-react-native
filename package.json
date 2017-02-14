@@ -1,0 +1,19 @@
+{
+  "name": "jcore-react-native",
+  "version": "1.1.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpush/jcore-react-native.git"
+  },
+  "author": "KenChoi, huminiOS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpush/jcore-react-native/issues"
+  },
+  "homepage": "https://github.com/jpush/jcore-react-native#readme"
+}
