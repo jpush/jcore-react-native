@@ -8,8 +8,4 @@ react-native link
 ```
 
 ## version
-jcore-react-native v1.2.1 match ^jpush-react-native v2.1.3
-
-jcore-react-native v1.1.5 match ^jpush-react-native v1.7.1
-
-jcore-react-native v1.1.3 match ^jpush-react-native v1.6.6
+If you are using jpush-react-native/jmessage-react-plugin/jshare-react-native/janalytics-react-native, please note the versions of jcore, jcore **must** matchs the versions the these libraries, detail information please refer to release note and version.txt( Under the android & iOS folder).
