@@ -1,5 +1,5 @@
 此插件所依赖的 JCore Android SDK 版本为
 
-android-jcore-version: v1.1.7
+android-jcore-version: v1.2.0
 
 此版本与 jcore-react-native 插件版本并不相同。如果有使用其他的 react native 插件如 jpush，jmessage，jshare，janalytics 等，需要去看看每个插件所依赖的 jcore 版本是多少。通常可以在 github release 中看到详细信息。
