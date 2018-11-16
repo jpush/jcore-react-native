@@ -1,6 +1,6 @@
 {
   "name": "jcore-react-native",
-  "version": "1.2.10",
+  "version": "1.2.12",
   "description": "Common lib for jpush react-native familiy",
   "main": "index.js",
   "scripts": {
