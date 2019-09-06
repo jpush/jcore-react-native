@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C8DE58C230685580075316F /* libjcore-ios-2.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8DE58B230685580075316F /* libjcore-ios-2.1.1.a */; };
+		5CE8168C22FC0296007D710C /* jcore-ios-2.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE8168B22FC0296007D710C /* jcore-ios-2.1.1.a */; };
 		6212E9F11F3991D500BDF51A /* RCTJCoreModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212E9F01F3991D500BDF51A /* RCTJCoreModule.m */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5C8DE58B230685580075316F /* libjcore-ios-2.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjcore-ios-2.1.1.a"; path = "RCTJCoreModule/libjcore-ios-2.1.1.a"; sourceTree = "<group>"; };
+		5CE8168B22FC0296007D710C /* jcore-ios-2.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "jcore-ios-2.1.1.a"; path = "RCTJCoreModule/jcore-ios-2.1.1.a"; sourceTree = "<group>"; };
 		6212E9B41F3990DC00BDF51A /* libRCTJCoreModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTJCoreModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6212E9EF1F3991D500BDF51A /* RCTJCoreModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTJCoreModule.h; sourceTree = "<group>"; };
 		6212E9F01F3991D500BDF51A /* RCTJCoreModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTJCoreModule.m; sourceTree = "<group>"; };
@@ -35,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C8DE58C230685580075316F /* libjcore-ios-2.1.1.a in Frameworks */,
+				5CE8168C22FC0296007D710C /* jcore-ios-2.1.1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +45,7 @@
 		5CE8168A22FC0295007D710C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5C8DE58B230685580075316F /* libjcore-ios-2.1.1.a */,
+				5CE8168B22FC0296007D710C /* jcore-ios-2.1.1.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
