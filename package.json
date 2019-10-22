@@ -1,19 +1,18 @@
 {
   "name": "jcore-react-native",
-  "version": "1.3.7",
-  "description": "Common lib for jpush react-native familiy",
+  "description": "React Native JCore component for Android and iOS",
+  "homepage":"https://github.com/jpush/jcore-react-native",
+  "author": "wicked.tc130",
+  "license": "ISC",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "1.3.10",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jpush/jcore-react-native.git"
+    "url": "https://github.com/jpush/jcore-react-native"
   },
-  "author": "KenChoi, huminiOS",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jpush/jcore-react-native/issues"
-  },
-  "homepage": "https://github.com/jpush/jcore-react-native#readme"
+  "keywords": [
+    "react-native",
+    "jiguang"
+    "JCore"
+  ]
 }
