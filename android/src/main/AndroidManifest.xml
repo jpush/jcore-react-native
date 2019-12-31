@@ -1,56 +1,56 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="cn.jiguang.plugins.core">
+    package="cn.jiguang.plugins.core">
 
-  <application>
+    <application>
 
-<!--    <provider-->
-<!--      android:name="cn.jpush.android.service.DataProvider"-->
-<!--      android:authorities="${applicationId}.DataProvider"-->
-<!--      android:exported="false"-->
-<!--      android:process=":multi" />-->
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false" />
 
-    <receiver
-      android:name="cn.jpush.android.service.AlarmReceiver"
-      android:exported="false" />
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
 
-    <receiver
-      android:name="cn.jpush.android.service.PushReceiver"
-      android:enabled="true"
-      android:exported="false">
-      <intent-filter android:priority="1000">
-        <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
-        <category android:name="${applicationId}" />
-      </intent-filter>
-      <intent-filter>
-        <action android:name="android.intent.action.USER_PRESENT" />
-        <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-      </intent-filter>
-      <intent-filter>
-        <action android:name="android.intent.action.PACKAGE_ADDED" />
-        <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
 
-        <data android:scheme="package" />
-      </intent-filter>
-    </receiver>
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
 
-    <service
-      android:name="cn.jpush.android.service.PushService"
-      android:exported="false">
-      <intent-filter>
-        <action android:name="cn.jpush.android.intent.REGISTER" />
-        <action android:name="cn.jpush.android.intent.REPORT" />
-        <action android:name="cn.jpush.android.intent.PushService" />
-        <action android:name="cn.jpush.android.intent.PUSH_TIME" />
-      </intent-filter>
-    </service>
+        <service android:name="cn.jiguang.plugins.service.JCoreModuleService">
+            <intent-filter>
+                <action android:name="cn.jiguang.user.service.action" />
+            </intent-filter>
+        </service>
 
-    <service
-      android:name="cn.jiguang.plugins.service.JCoreModuleService">
-      <intent-filter>
-        <action android:name="cn.jiguang.user.service.action" />
-      </intent-filter>
-    </service>
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="${JPUSH_CHANNEL}" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="${JPUSH_APPKEY}" />
 
-  </application>
+    </application>
 
 </manifest>
