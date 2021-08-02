@@ -38,7 +38,8 @@
             </intent-filter>
         </service>
 
-        <service android:name="cn.jiguang.plugins.service.JCoreModuleService">
+        <service android:name="cn.jiguang.plugins.service.JCoreModuleService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="cn.jiguang.user.service.action" />
             </intent-filter>
