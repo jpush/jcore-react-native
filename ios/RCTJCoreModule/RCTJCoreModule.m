@@ -7,7 +7,22 @@
 //
 
 #import "RCTJCoreModule.h"
+#import "JGInforCollectionAuth.h"
 
 @implementation RCTJCoreModule
+
+#define JgLog(fmt, ...) NSLog((@"| JGER | iOS | " fmt), ##__VA_ARGS__)
+
+RCT_EXPORT_MODULE(JCoreModule);
+
+#pragma mark --- 设备信息采集授权接口（合规接口）
+RCT_EXPORT_METHOD(setAuth: (BOOL *)enable)
+{
+    JgLog("JCollectionAuth %d",enable);
+    __block BOOL isAuth= enable;
+    [JGInforCollectionAuth JCollectionAuth:^(JGInforCollectionAuthItems * _Nonnull authInfo) {
+        authInfo.isAuth = isAuth;
+    }];
+}
 
 @end

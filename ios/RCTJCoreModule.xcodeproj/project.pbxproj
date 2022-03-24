@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5AA2628C253EC7E000196F42 /* libjcore-ios-2.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA2628B253EC7E000196F42 /* libjcore-ios-2.4.0.a */; };
+		08166A7B27EC622A00C7233B /* RCTJCoreModule.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6212E9EF1F3991D500BDF51A /* RCTJCoreModule.h */; };
+		08166A7E27EC62A900C7233B /* jcore-ios-3.2.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08166A7D27EC62A900C7233B /* jcore-ios-3.2.1.a */; };
 		6212E9F11F3991D500BDF51A /* RCTJCoreModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212E9F01F3991D500BDF51A /* RCTJCoreModule.m */; };
 /* End PBXBuildFile section */
 
@@ -18,13 +19,15 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				08166A7B27EC622A00C7233B /* RCTJCoreModule.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5AA2628B253EC7E000196F42 /* libjcore-ios-2.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjcore-ios-2.4.0.a"; path = "RCTJCoreModule/libjcore-ios-2.4.0.a"; sourceTree = "<group>"; };
+		08166A7C27EC628200C7233B /* Lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Lib; sourceTree = "<group>"; };
+		08166A7D27EC62A900C7233B /* jcore-ios-3.2.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "jcore-ios-3.2.1.a"; path = "RCTJCoreModule/Lib/jcore-ios-3.2.1.a"; sourceTree = "<group>"; };
 		6212E9B41F3990DC00BDF51A /* libRCTJCoreModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTJCoreModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6212E9EF1F3991D500BDF51A /* RCTJCoreModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTJCoreModule.h; sourceTree = "<group>"; };
 		6212E9F01F3991D500BDF51A /* RCTJCoreModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTJCoreModule.m; sourceTree = "<group>"; };
@@ -35,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AA2628C253EC7E000196F42 /* libjcore-ios-2.4.0.a in Frameworks */,
+				08166A7E27EC62A900C7233B /* jcore-ios-3.2.1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +48,7 @@
 		5CE8168A22FC0295007D710C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5AA2628B253EC7E000196F42 /* libjcore-ios-2.4.0.a */,
+				08166A7D27EC62A900C7233B /* jcore-ios-3.2.1.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -70,6 +73,7 @@
 		6212E9B61F3990DC00BDF51A /* RCTJCoreModule */ = {
 			isa = PBXGroup;
 			children = (
+				08166A7C27EC628200C7233B /* Lib */,
 				6212E9EF1F3991D500BDF51A /* RCTJCoreModule.h */,
 				6212E9F01F3991D500BDF51A /* RCTJCoreModule.m */,
 			);
@@ -236,9 +240,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = RL64Y54S9V;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/RCTJCoreModule/Lib/**";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RCTJCoreModule",
+					"$(PROJECT_DIR)/RCTJCoreModule/Lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -250,9 +256,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = RL64Y54S9V;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/RCTJCoreModule/Lib/**";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RCTJCoreModule",
+					"$(PROJECT_DIR)/RCTJCoreModule/Lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
