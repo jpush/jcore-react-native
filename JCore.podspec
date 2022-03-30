@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
   s.source_files       = 'ios/RCTJCoreModule/*.{h,m}'
   s.preserve_paths     = "**/*.js"
   s.vendored_libraries = "ios/RCTJCoreModule/*.a"
- 	
+ 	s.libraries       = 'z','resolv', 'sqlite3', 'c++.1'
   s.dependency 'React'
 end
