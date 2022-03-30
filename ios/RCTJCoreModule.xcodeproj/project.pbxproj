@@ -240,7 +240,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = RL64Y54S9V;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/RCTJCoreModule/Lib/**";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/RCTJCoreModule/Lib/**",
+					"$(SRCROOT)/../../react-native/React/**",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RCTJCoreModule",
@@ -256,7 +259,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = RL64Y54S9V;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/RCTJCoreModule/Lib/**";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/RCTJCoreModule/Lib/**",
+					"$(SRCROOT)/../../react-native/React/**",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RCTJCoreModule",
