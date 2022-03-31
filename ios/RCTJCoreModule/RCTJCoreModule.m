@@ -25,4 +25,10 @@ RCT_EXPORT_METHOD(setAuth: (BOOL *)enable)
     }];
 }
 
+//事件处理
+- (NSArray<NSString *> *)supportedEvents
+{
+    return @[];
+}
+
 @end
