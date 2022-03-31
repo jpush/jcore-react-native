@@ -5,7 +5,7 @@
   "author"     : "wicked.tc130",
   "license"    : "ISC",
   "main"       : "index.js",
-  "version"    : "2.0.0",
+  "version"    : "2.0.1",
   "repository" : {
     "type": "git",
     "url": "https://github.com/jpush/jcore-react-native"
@@ -14,5 +14,8 @@
     "react-native",
     "jiguang",
     "JCore"
-  ]
+  ],
+  "peerDependencies": {
+    "react-native": ">= 0.60"
+  }
 }
