@@ -43,6 +43,18 @@ public class JCoreModule extends ReactContextBaseJavaModule {
     public void setAuth(boolean bool){
         JCollectionAuth.setAuth(reactContext,bool);
     }
+    @ReactMethod
+    public void testCountryCode(String code){
+        if (readableMap == null) {
+            JLogger.w(JConstants.PARAMS_NULL);
+            return;
+        }
+        String code = readableMap.getString(JConstants.COUNTRY_CODE);
+        if (TextUtils.isEmpty(code)) {
+        } else {
+            JCoreInterface.testCountryCode(code);
+        }
+    }
 
 
 }
