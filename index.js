@@ -12,5 +12,10 @@ export default class JCore {
  static setAuth(auth) {
    JCoreModule.setAuth(auth)
  }
+ static testCountryCode(params) {
+   if (Platform.OS == "android") {
+      JCoreModule.testCountryCode(params)
+   }
+ }
 
 }
