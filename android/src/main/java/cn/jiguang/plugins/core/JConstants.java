@@ -1,4 +1,4 @@
-package cn.jiguang.plugins.push.common;
+package cn.jiguang.plugins.core;
 
 public class JConstants {
 
