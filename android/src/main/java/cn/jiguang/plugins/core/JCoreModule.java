@@ -20,7 +20,6 @@ import org.json.JSONObject;
 
 import java.util.HashSet;
 import java.util.Set;
-import cn.jiguang.plugins.core.JConstants;
 import cn.jiguang.api.utils.JCollectionAuth;
 import cn.jiguang.api.JCoreInterface;
 
@@ -44,12 +43,11 @@ public class JCoreModule extends ReactContextBaseJavaModule {
         JCollectionAuth.setAuth(reactContext,bool);
     }
     @ReactMethod
-    public void testCountryCode(String code){
+    public void testCountryCode(ReadableMap readableMap){
         if (readableMap == null) {
-            JLogger.w(JConstants.PARAMS_NULL);
             return;
         }
-        String code = readableMap.getString(JConstants.COUNTRY_CODE);
+        String code = readableMap.getString("code");
         if (TextUtils.isEmpty(code)) {
         } else {
             JCoreInterface.testCountryCode(code);
