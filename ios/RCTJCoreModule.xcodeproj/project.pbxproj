@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08166A7B27EC622A00C7233B /* RCTJCoreModule.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6212E9EF1F3991D500BDF51A /* RCTJCoreModule.h */; };
-		08166A7E27EC62A900C7233B /* jcore-ios-3.2.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08166A7D27EC62A900C7233B /* jcore-ios-3.2.1.a */; };
+		2A47130D29E5582800E9C3D7 /* libjcore-ios-4.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A47130C29E5582800E9C3D7 /* libjcore-ios-4.2.0.a */; };
 		6212E9F11F3991D500BDF51A /* RCTJCoreModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212E9F01F3991D500BDF51A /* RCTJCoreModule.m */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +27,7 @@
 
 /* Begin PBXFileReference section */
 		08166A7C27EC628200C7233B /* Lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Lib; sourceTree = "<group>"; };
-		08166A7D27EC62A900C7233B /* jcore-ios-3.2.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "jcore-ios-3.2.1.a"; path = "RCTJCoreModule/Lib/jcore-ios-3.2.1.a"; sourceTree = "<group>"; };
+		2A47130C29E5582800E9C3D7 /* libjcore-ios-4.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjcore-ios-4.2.0.a"; path = "RCTJCoreModule/libjcore-ios-4.2.0.a"; sourceTree = "<group>"; };
 		6212E9B41F3990DC00BDF51A /* libRCTJCoreModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTJCoreModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6212E9EF1F3991D500BDF51A /* RCTJCoreModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTJCoreModule.h; sourceTree = "<group>"; };
 		6212E9F01F3991D500BDF51A /* RCTJCoreModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTJCoreModule.m; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08166A7E27EC62A900C7233B /* jcore-ios-3.2.1.a in Frameworks */,
+				2A47130D29E5582800E9C3D7 /* libjcore-ios-4.2.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,7 +48,7 @@
 		5CE8168A22FC0295007D710C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				08166A7D27EC62A900C7233B /* jcore-ios-3.2.1.a */,
+				2A47130C29E5582800E9C3D7 /* libjcore-ios-4.2.0.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
