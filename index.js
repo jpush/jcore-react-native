@@ -17,5 +17,10 @@ export default class JCore {
       JCoreModule.testCountryCode(params)
    }
  }
+ static enableAutoWakeup(enable) {
+   if (Platform.OS == "android") {
+      JCoreModule.enableAutoWakeup(enable)
+   }
+ }
 
 }
