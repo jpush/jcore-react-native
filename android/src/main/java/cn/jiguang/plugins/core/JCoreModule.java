@@ -54,7 +54,7 @@ public class JCoreModule extends ReactContextBaseJavaModule {
         String code = readableMap.getString("code");
         if (TextUtils.isEmpty(code)) {
         } else {
-            JCoreInterface.testCountryCode(code);
+            JCoreInterface.testCountryCode(reactContext,code);
         }
     }
 
