@@ -3,7 +3,7 @@ pjson = JSON.parse(File.read('package.json'))
 
 Pod::Spec.new do |s|
 
-  s.name            = "JCore"
+  s.name            = "RCTJCore"
   s.version         = pjson["version"]
   s.homepage        = pjson["homepage"]
   s.summary         = pjson["description"]
@@ -18,4 +18,5 @@ Pod::Spec.new do |s|
   s.vendored_libraries = "ios/RCTJCoreModule/*.a"
  	s.libraries       = 'z','resolv', 'sqlite3', 'c++.1'
   s.dependency 'React'
+  s.dependency 'JCore', '4.1.0-noidfa'
 end
