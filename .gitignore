@@ -10,3 +10,4 @@ build-res/
 *.log
 .qshell
 *.qshell
+xcuserdata
