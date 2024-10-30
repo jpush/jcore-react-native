@@ -12,9 +12,9 @@ export default class JCore {
  static setAuth(auth) {
    JCoreModule.setAuth(auth)
  }
- static testCountryCode(params) {
+ static setCountryCode(params) {
    if (Platform.OS == "android") {
-      JCoreModule.testCountryCode(params)
+      JCoreModule.setCountryCode(params)
    }
  }
  static enableAutoWakeup(enable) {
