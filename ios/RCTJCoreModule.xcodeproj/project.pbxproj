@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		08166A7B27EC622A00C7233B /* RCTJCoreModule.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6212E9EF1F3991D500BDF51A /* RCTJCoreModule.h */; };
 		6212E9F11F3991D500BDF51A /* RCTJCoreModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212E9F01F3991D500BDF51A /* RCTJCoreModule.m */; };
-		6283FF522D390D1A003A8199 /* jcore-ios-4.9.0.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6283FF512D390D1A003A8199 /* jcore-ios-4.9.0.xcframework */; };
+		624D3A382DB78EBC00C8C3C0 /* jcore-ios-5.0.1.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624D3A372DB78EBC00C8C3C0 /* jcore-ios-5.0.1.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,7 +29,7 @@
 		6212E9B41F3990DC00BDF51A /* libRCTJCoreModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTJCoreModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6212E9EF1F3991D500BDF51A /* RCTJCoreModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTJCoreModule.h; sourceTree = "<group>"; };
 		6212E9F01F3991D500BDF51A /* RCTJCoreModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTJCoreModule.m; sourceTree = "<group>"; };
-		6283FF512D390D1A003A8199 /* jcore-ios-4.9.0.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "jcore-ios-4.9.0.xcframework"; sourceTree = "<group>"; };
+		624D3A372DB78EBC00C8C3C0 /* jcore-ios-5.0.1.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "jcore-ios-5.0.1.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6283FF522D390D1A003A8199 /* jcore-ios-4.9.0.xcframework in Frameworks */,
+				624D3A382DB78EBC00C8C3C0 /* jcore-ios-5.0.1.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,7 +47,7 @@
 		5CE8168A22FC0295007D710C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6283FF512D390D1A003A8199 /* jcore-ios-4.9.0.xcframework */,
+				624D3A372DB78EBC00C8C3C0 /* jcore-ios-5.0.1.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
