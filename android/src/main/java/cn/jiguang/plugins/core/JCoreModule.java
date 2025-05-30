@@ -58,5 +58,32 @@ public class JCoreModule extends ReactContextBaseJavaModule {
         }
     }
 
+    @ReactMethod
+    public void enableSDKLocalLog(ReadableMap readableMap){
+        if (readableMap == null) {
+            return;
+        }
+        boolean enable = false;
+        if (readableMap.hasKey("enable")) {
+            enable = readableMap.getBoolean("enable");
+        }
+        boolean uploadJgToServer = false;
+       if (readableMap.hasKey("uploadJgToServer")) {
+            uploadJgToServer = readableMap.getBoolean("uploadJgToServer");
+        }
+        JCoreInterface.enableSDKLocalLog(reactContext,enable,uploadJgToServer);
+    }
+
+    @ReactMethod
+    public void readNewLogs(Callback callback) {
+        if (callback == null) {
+            return;
+        }
+        String logs = JCoreInterface.readNewLogs(reactContext);
+        WritableMap writableMap = Arguments.createMap();
+        writableMap.putString("logs", logs);
+        callback.invoke(writableMap);
+    }
+
 
 }
