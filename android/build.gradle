@@ -20,7 +20,14 @@ android {
   }
 }
 
+repositories {
+  flatDir {
+    dirs 'libs'
+  }
+}
+
 dependencies {
-  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  // 支持 JAR 和 AAR 两种格式
+  implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
   implementation 'com.facebook.react:react-native:+'
 }
