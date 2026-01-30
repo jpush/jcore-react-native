@@ -6,48 +6,37 @@
 
 ### 1. 更新iOS JCore SDK
 
-**方法一：手动替换（推荐）**
-1. 找到需要升级的 iOS JCore SDK，替换 `ios/RCTJCoreModule/jcore-ios-x.x.x.xcframework` 为需要更新的版本
-2. 将 `ios/RCTJCoreModule.xcodeproj/project.pbxproj` 中关于 `jcore-ios-x.x.x.xcframework` 相关的引用，替换为需要更新的版本
+使用自动下载脚本更新：
 
-**方法二：使用自动下载脚本（如果脚本已适配 JCore）**
 ```bash
 # 在项目根目录执行
 ./.cursor/scripts/download_ios_sdk.sh <版本标签>
 
-# 示例：下载 v5.2.1 版本
-./.cursor/scripts/download_ios_sdk.sh v5.2.1
+# 示例：下载 5.3.0 版本（标签不带 v 前缀）
+./.cursor/scripts/download_ios_sdk.sh 5.3.0
 ```
 
 **注意**：
-- 如果使用脚本，脚本会自动更新 project.pbxproj 文件
-- 如果自动更新失败，请手动更新
-- 确保 SDK 路径和版本号在 project.pbxproj 中正确更新
+- 脚本会自动更新 project.pbxproj 中的 SDK 引用
+- **如果自动下载失败**，请手动更新：替换 `ios/RCTJCoreModule/jcore-ios-x.x.x.xcframework` 为对应版本，并修改 `ios/RCTJCoreModule.xcodeproj/project.pbxproj` 中相关引用
 
 ### 2. 更新Android JCore SDK
 
-根据 `cursor.md` 文档，更新 Android JCore SDK 的步骤如下：
+使用自动下载脚本更新：
 
-**方法一：手动替换（推荐）**
-1. 找到需要升级的 Android JCore SDK，替换 `android/libs/jcore-android-x.x.x.jar` 或 `android/libs/jcore-android-x.x.x.aar` 为需要更新的版本
-2. **注意**：新版本可能使用 AAR 格式，旧版本使用 JAR 格式，脚本和 build.gradle 已兼容两种格式
-
-**方法二：使用自动下载脚本（如果脚本已适配 JCore）**
 ```bash
 # 在项目根目录执行
 ./.cursor/scripts/download_android_sdk.sh <版本号>
 
-# 示例：下载 5.2.0 版本
-./.cursor/scripts/download_android_sdk.sh 5.2.0
+# 示例：下载 5.3.0 版本
+./.cursor/scripts/download_android_sdk.sh 5.3.0
 ```
 
 **注意**：
-- 如果使用脚本，脚本会尝试自动下载，如果失败，会引导您从[极光官方资源下载页面](https://docs.jiguang.cn/jcore/resources)手动下载
-- 下载的文件是 ZIP 压缩包，SDK jar 或 aar 文件在压缩包的 `libs` 文件夹下
-- 手动下载时，脚本会提示您输入 ZIP 文件路径（支持拖拽文件到终端）
-- 脚本会自动解压 ZIP 文件，并从 `libs` 文件夹中提取 jar 或 aar 文件
-- 脚本会自动检测文件类型（JAR 或 AAR），并复制到正确位置
-- `build.gradle` 已配置支持 `libs` 目录下的 jar 和 aar 文件，无需手动修改
+- 脚本会尝试自动下载；若失败，会引导从[极光官方资源下载页面](https://docs.jiguang.cn/jcore/resources)选择并输入 ZIP 路径（支持拖拽到终端）
+- 脚本会自动解压并从 `libs` 中提取 jar 或 aar，复制到 `android/libs`
+- `build.gradle` 已支持 `libs` 下的 jar 和 aar，无需改配置
+- **若自动下载/脚本均失败**，请手动更新：将对应版本的 `jcore-android-x.x.x.jar` 或 `jcore-android-x.x.x.aar` 放入 `android/libs`
 
 <!--
 ### 3. 查找SDK新增API
