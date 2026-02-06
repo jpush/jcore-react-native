@@ -6,123 +6,32 @@
 
 ### 1. 更新iOS JCore SDK
 
-使用自动下载脚本更新：
+iOS 端通过 CocoaPods 依赖 JCore SDK。在 `JCoreRN.podspec` 中修改版本号即可：
 
-```bash
-# 在项目根目录执行
-./.cursor/scripts/download_ios_sdk.sh <版本标签>
-
-# 示例：下载 5.3.0 版本（标签不带 v 前缀）
-./.cursor/scripts/download_ios_sdk.sh 5.3.0
+```ruby
+Pod::Spec.new do |s|
+  # ...
+  s.dependency 'JCore', '5.x.x'  # 将 5.x.x 改为目标版本，如 5.3.0
+  # ...
+end
 ```
 
-**注意**：
-- 脚本会自动更新 project.pbxproj 中的 SDK 引用
-- **如果自动下载失败**，请手动更新：替换 `ios/RCTJCoreModule/jcore-ios-x.x.x.xcframework` 为对应版本，并修改 `ios/RCTJCoreModule.xcodeproj/project.pbxproj` 中相关引用
+**说明**：将 `JCore` 的版本号改为需要更新的版本（如 5.3.0）
 
 ### 2. 更新Android JCore SDK
 
-使用自动下载脚本更新：
+Android 端通过 Maven 依赖 JCore SDK。在 `android/build.gradle` 中修改版本号即可：
 
-```bash
-# 在项目根目录执行
-./.cursor/scripts/download_android_sdk.sh <版本号>
-
-# 示例：下载 5.3.0 版本
-./.cursor/scripts/download_android_sdk.sh 5.3.0
+```gradle
+dependencies {
+  implementation 'cn.jiguang.sdk:jcore:5.x.x'  // 将 5.x.x 改为目标版本，如 5.3.0
+  // ...
+}
 ```
 
-**注意**：
-- 脚本会尝试自动下载；若失败，会引导从[极光官方资源下载页面](https://docs.jiguang.cn/jcore/resources)选择并输入 ZIP 路径（支持拖拽到终端）
-- 脚本会自动解压并从 `libs` 中提取 jar 或 aar，复制到 `android/libs`
-- `build.gradle` 已支持 `libs` 下的 jar 和 aar，无需改配置
-- **若自动下载/脚本均失败**，请手动更新：将对应版本的 `jcore-android-x.x.x.jar` 或 `jcore-android-x.x.x.aar` 放入 `android/libs`
+**说明**：将 `cn.jiguang.sdk:jcore` 的版本号改为需要更新的版本（如 5.3.0）
 
-<!--
-### 3. 查找SDK新增API
-
-**⚠️ 重要：必须仔细逐项检查更新日志，不要因为看到"更新各厂商SDK"等主要更新内容就忽略新增API的检查！**
-
-#### Android SDK
-- 访问 [Android SDK Changelog](https://docs.jiguang.cn/jcore/jcore_changelog/updates_Android) 查找新版本的新增对外API
-- **检查方法**：
-  1. 找到目标版本（如 v5.2.0）的更新内容部分
-  2. **逐项阅读**更新内容列表中的每一项，不要跳过任何条目
-  3. 特别关注包含以下关键词的条目：
-     - "新增"、"新增接口"、"新增API"、"新增方法"
-     - "public static"、"public void" 等Java方法签名
-     - "支持"、"功能"（可能包含新API）
-  4. 对于每个疑似新增API的条目，记录：
-     - API方法名（如 `setAuth`）
-     - 完整方法签名（如 `public static void setAuth(boolean auth)`）
-     - 功能描述
-- 在 [Android SDK API 文档](https://docs.jiguang.cn/jcore/client/Android/android_api) 中查找并确认新增API的详细用法、参数说明和示例代码
-
-#### iOS SDK
-- 访问 [iOS SDK Changelog](https://docs.jiguang.cn/jcore/jcore_changelog/updates_iOS) 查找新版本的新增对外API
-- **检查方法**：
-  1. 找到目标版本（如 v5.2.1）的更新内容部分
-  2. **逐项阅读**更新内容列表中的每一项，不要跳过任何条目
-  3. 特别关注包含以下关键词的条目：
-     - "新增"、"新增接口"、"新增API"、"新增方法"
-     - Objective-C方法签名（如 `+ (void)setAuth:`）
-     - "支持"、"功能"（可能包含新API）
-  4. 对于每个疑似新增API的条目，记录：
-     - API方法名
-     - 完整方法签名
-     - 功能描述
-- 在 [iOS SDK API 文档](https://docs.jiguang.cn/jcore/client/iOS/ios_api) 中查找并确认新增API的详细用法、参数说明和示例代码
-
-**检查清单**（在完成检查后确认）：
-- [ ] 已找到目标版本的更新日志
-- [ ] 已逐项阅读所有更新内容条目（包括次要更新）
-- [ ] 已识别所有包含"新增"、"API"、"接口"、"方法"等关键词的条目
-- [ ] 已记录所有新增API的方法名和签名
-- [ ] 已在API文档中查找并确认了每个新增API的详细用法
-- [ ] 已区分哪些是新增的对外API（需要封装），哪些是内部更新（不需要封装）
-
-**常见误区**：
-- ❌ 错误：看到"更新各厂商SDK"就认为只是版本更新，没有新增API
-- ✅ 正确：即使主要更新是版本升级，也要仔细检查是否有新增API
-- ❌ 错误：只关注主要更新内容，忽略列表中的其他条目
-- ✅ 正确：必须逐项检查更新内容列表中的每一项
-- ❌ 错误：依赖搜索结果判断是否有新增API
-- ✅ 正确：直接查看官方更新日志，逐项检查
-- ❌ 错误：文本识别有问题时（如缺少字母），直接忽略
-- ✅ 正确：如果文本识别有问题，需要手动访问官方文档确认
-
-### 4. 封装新增API（如有）
-
-**⚠️ 重要：如果没有新增API，必须明确说明"经检查，该版本无新增对外API"，而不是简单说"没有新增API"。**
-
-如果SDK有新增API，需要在插件中进行封装：
-- 在 `index.js` 中添加JavaScript方法
-- 在 `index.d.ts` 中添加TypeScript类型定义
-- 在 `android/src/main/java/cn/jiguang/plugins/core/JCoreModule.java` 中实现Android端逻辑
-- 在 `ios/RCTJCoreModule/RCTJCoreModule.m` 中实现iOS端逻辑
-
-**封装原则**：
-- 如果Android和iOS新增的API是同一个功能，封装成一个插件方法
-- 如果不是同一个功能，分开封装
-- **不要使用反射的方式调用SDK API，直接调用即可**
-- 如果没有新增API，**必须明确说明已检查并确认无新增API**，然后跳过此步骤
-
-**封装步骤**：
-1. 确定API的完整签名和参数类型
-2. 确定API的调用时机（是否需要在init之前调用）
-3. 在对应平台实现方法（Android在JCoreModule.java，iOS在RCTJCoreModule.m）
-4. 在 `index.js` 中添加JavaScript方法，保持与现有API风格一致
-5. 在 `index.d.ts` 中添加TypeScript类型定义
-6. 添加必要的错误处理和日志
-
-**注意**：React Native插件新增方法还需要在 `index.js` 和 `index.d.ts` 文件中声明。
-
-### 5. 更新示例代码
-
-在插件示例demo中添加新增API的示例调用代码（如有新增API）。注意RN插件新增方法还需要在 `index.js` 和 `index.d.ts` 文件中声明。
--->
-
-### 6. 更新插件版本号
+### 3. 更新插件版本号
 
 在 `package.json` 中更新插件版本号：
 
@@ -133,7 +42,7 @@
 - 假设当前版本为 `2.3.3`
 - 更新后版本为 `2.3.4`
 
-### 7. 更新示例项目依赖版本（如有示例项目）
+### 4. 更新示例项目依赖版本（如有示例项目）
 
 如果项目包含示例项目，在 `example/package.json` 中更新示例项目的插件依赖版本，改为最新的插件版本号：
 
@@ -145,7 +54,7 @@
 }
 ```
 
-### 8. 更新CHANGELOG.md（如有）
+### 5. 更新CHANGELOG.md（如有）
 
 如果项目包含 `CHANGELOG.md` 文件，在其中记录本次更新的变更内容，包括：
 - SDK版本更新
@@ -167,15 +76,9 @@
 
 ## 注意事项
 
-- **必须逐项检查更新日志，不要遗漏任何新增API**
-- 确保Android和iOS的SDK版本对应关系正确
-- 新增API的封装需要保持与现有API风格一致
-- **React Native插件新增方法需要在 `index.js` 和 `index.d.ts` 两个文件中都声明**
+- 确保 Android 和 iOS 的 SDK 版本对应关系正确
 - 更新后建议进行测试验证
-- **如果更新日志中的文本识别有问题（如缺少字母），需要手动访问官方文档确认**
-- 根据 `cursor.md` 文档，更新步骤应遵循：
-  1. 替换 iOS SDK：`ios/RCTJCoreModule/jcore-ios-x.x.x.xcframework`
-  2. 更新 `ios/RCTJCoreModule.xcodeproj/project.pbxproj` 中的 SDK 引用
-  3. 替换 Android SDK：`android/libs/jcore-android-x.x.x.jar`
-  4. 封装新增方法（如有）并在 `index.js` 和 `index.d.ts` 中声明
-  5. 更新 `package.json` 版本号（+0.0.1）
+- 更新步骤应遵循：
+  1. 更新 iOS SDK：在 `JCoreRN.podspec` 中修改 `s.dependency 'JCore', '5.x.x'` 的版本号
+  2. 更新 Android SDK：在 `android/build.gradle` 中修改 `implementation 'cn.jiguang.sdk:jcore:5.x.x'` 的版本号
+  3. 更新 `package.json` 版本号（+0.0.1）
