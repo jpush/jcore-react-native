@@ -30,5 +30,5 @@ dependencies {
   // 支持 JAR 和 AAR 两种格式
   // implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
   implementation 'com.facebook.react:react-native:+'
-  implementation 'cn.jiguang.sdk:jcore:5.3.0'  
+  implementation 'cn.jiguang.sdk:jcore:5.4.0'  
 }
