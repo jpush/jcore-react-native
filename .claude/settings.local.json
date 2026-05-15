@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(update-sdk)",
+      "Bash(pip3 install *)",
+      "Bash(python3 *)",
+      "WebFetch(domain:docs.jiguang.cn)"
+    ]
+  }
+}

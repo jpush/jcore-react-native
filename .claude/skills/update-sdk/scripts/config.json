@@ -1,0 +1,58 @@
+{
+  "plugin_name": "jcore-react-native",
+  "sdk_type": "jcore",
+  "platform": "react-native",
+  "changelog_urls": {
+    "android": "https://docs.jiguang.cn/jpush/jpush_changelog/updates_Android",
+    "ios": "https://docs.jiguang.cn/jpush/jpush_changelog/updates_iOS"
+  },
+  "version_refs": {
+    "android_sdk": {
+      "integration": "maven",
+      "files": [
+        {
+          "path": "android/build.gradle",
+          "pattern": "cn.jiguang.sdk:jcore:{VERSION}"
+        }
+      ]
+    },
+    "ios_sdk": {
+      "integration": "cocoapods",
+      "files": [
+        {
+          "path": "JCoreRN.podspec",
+          "pattern": "s.dependency 'JCore','{VERSION}'"
+        }
+      ]
+    },
+    "plugin": {
+      "files": [
+        {
+          "path": "package.json",
+          "key": "version"
+        }
+      ]
+    }
+  },
+  "native_files": {
+    "android": [
+      "android/src/main/java/cn/jiguang/plugins/core/JCoreModule.java"
+    ],
+    "ios": [
+      "ios/RCTJCoreModule/RCTJCoreModule.h",
+      "ios/RCTJCoreModule/RCTJCoreModule.m"
+    ]
+  },
+  "bridge_files": {
+    "js": [
+      "index.js"
+    ],
+    "ts": [
+      "index.d.ts"
+    ]
+  },
+  "changelog_file": "CHANGELOG.md",
+  "publish": {
+    "type": "npm"
+  }
+}
