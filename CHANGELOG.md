@@ -1,3 +1,8 @@
+## 2.3.8（候选，未发布）
+
+- Android/iOS JCore SDK 5.5.0 → 5.6.0；保持原最低平台与原生依赖方式。
+- 公开业务门面差分无新增/移除接口；修正readNewLogs的TypeScript Callback类型声明。
+
 ## 2.3.7 (2026-07-28)
 
 升级 JCore Android SDK 5.4.0 → 5.5.0，JCore iOS SDK 5.4.0 → 5.5.0。
