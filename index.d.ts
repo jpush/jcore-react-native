@@ -1,3 +1,5 @@
+type Callback<T> = (result: T) => void;
+
 // 定义 JCore 类的类型声明
 export default class JCore {
     /**
